@@ -83,7 +83,8 @@
       "type": "string"
     },
     "timeout": {
-      "type": "integer"
+      "type": "integer",
+      "exclusiveMinimum": 0
     },
     "meta": {
       "patternProperties": {
