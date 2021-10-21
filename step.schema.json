@@ -1,6 +1,121 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "$ref": "#/definitions/StepModel",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/step.schema.json",
+  "title": "Step",
+  "description": "Bitrise Step",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["title", "summary", "website"],
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "source_code_url": {
+      "type": "string"
+    },
+    "support_url": {
+      "type": "string"
+    },
+    "published_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source": {
+      "$ref": "#/definitions/StepSourceModel"
+    },
+    "asset_urls": {
+      "patternProperties": {
+        ".*": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "host_os_tags": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "project_type_tags": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "type_tags": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "dependencies": {
+      "items": {
+        "$ref": "#/definitions/DependencyModel"
+      },
+      "type": "array"
+    },
+    "toolkit": {
+      "$ref": "#/definitions/StepToolkitModel"
+    },
+    "deps": {
+      "$ref": "#/definitions/DepsModel"
+    },
+    "is_requires_admin_user": {
+      "type": "boolean"
+    },
+    "is_always_run": {
+      "type": "boolean"
+    },
+    "is_skippable": {
+      "type": "boolean"
+    },
+    "run_if": {
+      "type": "string"
+    },
+    "timeout": {
+      "type": "integer"
+    },
+    "meta": {
+      "patternProperties": {
+        ".*": {
+          "additionalProperties": true
+        }
+      },
+      "type": "object"
+    },
+    "inputs": {
+      "items": {
+        "patternProperties": {
+          ".*": {
+            "additionalProperties": true
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "outputs": {
+      "items": {
+        "patternProperties": {
+          ".*": {
+            "additionalProperties": true
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
   "definitions": {
     "AptGetDepModel": {
       "properties": {
@@ -81,124 +196,12 @@
       "type": "object"
     },
     "GoStepToolkitModel": {
-      "required": ["package_name"],
+      "required": [
+        "package_name"
+      ],
       "properties": {
         "package_name": {
           "type": "string"
-        }
-      },
-      "additionalProperties": false,
-      "type": "object"
-    },
-    "StepModel": {
-      "properties": {
-        "title": {
-          "type": "string"
-        },
-        "summary": {
-          "type": "string"
-        },
-        "description": {
-          "type": "string"
-        },
-        "website": {
-          "type": "string"
-        },
-        "source_code_url": {
-          "type": "string"
-        },
-        "support_url": {
-          "type": "string"
-        },
-        "published_at": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "source": {
-          "$ref": "#/definitions/StepSourceModel"
-        },
-        "asset_urls": {
-          "patternProperties": {
-            ".*": {
-              "type": "string"
-            }
-          },
-          "type": "object"
-        },
-        "host_os_tags": {
-          "items": {
-            "type": "string"
-          },
-          "type": "array"
-        },
-        "project_type_tags": {
-          "items": {
-            "type": "string"
-          },
-          "type": "array"
-        },
-        "type_tags": {
-          "items": {
-            "type": "string"
-          },
-          "type": "array"
-        },
-        "dependencies": {
-          "items": {
-            "$ref": "#/definitions/DependencyModel"
-          },
-          "type": "array"
-        },
-        "toolkit": {
-          "$ref": "#/definitions/StepToolkitModel"
-        },
-        "deps": {
-          "$ref": "#/definitions/DepsModel"
-        },
-        "is_requires_admin_user": {
-          "type": "boolean"
-        },
-        "is_always_run": {
-          "type": "boolean"
-        },
-        "is_skippable": {
-          "type": "boolean"
-        },
-        "run_if": {
-          "type": "string"
-        },
-        "timeout": {
-          "type": "integer"
-        },
-        "meta": {
-          "patternProperties": {
-            ".*": {
-              "additionalProperties": true
-            }
-          },
-          "type": "object"
-        },
-        "inputs": {
-          "items": {
-            "patternProperties": {
-              ".*": {
-                "additionalProperties": true
-              }
-            },
-            "type": "object"
-          },
-          "type": "array"
-        },
-        "outputs": {
-          "items": {
-            "patternProperties": {
-              ".*": {
-                "additionalProperties": true
-              }
-            },
-            "type": "object"
-          },
-          "type": "array"
         }
       },
       "additionalProperties": false,
