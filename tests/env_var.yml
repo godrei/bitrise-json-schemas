@@ -1,0 +1,11 @@
+verbose_log: "no"
+opts:
+  category: Debug
+  title: Enable verbose logging?
+  description: Enable verbose logging?
+  is_required: true
+  is_expand: true
+  is_sensitive: true
+  value_options:
+  - "yes"
+  - "no"
