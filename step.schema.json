@@ -11,7 +11,8 @@
       "type": "string"
     },
     "summary": {
-      "type": "string"
+      "type": "string",
+      "pattern": "^.*$"
     },
     "description": {
       "type": "string"
