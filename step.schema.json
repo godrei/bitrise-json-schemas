@@ -49,9 +49,12 @@
     },
     "project_type_tags": {
       "items": {
-        "type": "string"
+        "type": "string",
+        "enum": ["ios", "macos", "android", "xamarin", "react-native", "cordova", "ionic", "flutter"]
       },
-      "type": "array"
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true
     },
     "type_tags": {
       "items": {
