@@ -58,7 +58,9 @@
         "type": "string",
         "enum": ["access-control", "artifact-info", "installer", "deploy", "utility", "dependency", "code-sign", "build", "test", "notification"]
       },
-      "type": "array"
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true
     },
     "dependencies": {
       "items": {
