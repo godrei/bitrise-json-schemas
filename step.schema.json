@@ -12,7 +12,7 @@
     },
     "summary": {
       "type": "string",
-      "pattern": "^.*$"
+      "pattern": "^.{1,100}$"
     },
     "description": {
       "type": "string"
