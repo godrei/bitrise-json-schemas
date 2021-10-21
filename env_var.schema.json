@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://example.com/product.schema.json",
+  "$id": "https://example.com/env_var.schema.json",
   "title": "Environment Variable",
   "description": "Bitrise Environment Variable",
   "type": "object",
