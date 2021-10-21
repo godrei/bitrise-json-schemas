@@ -7,6 +7,11 @@
   "additionalProperties": false,
   "maxProperties": 2,
   "minProperties": 1,
+  "dependentSchemas": {
+    "opts": {
+      "minProperties": 2
+    }
+  },
   "patternProperties": {
     "^(?!opts$).+": {
       "type": ["string", "null"]
@@ -14,6 +19,7 @@
   },
   "properties": {
     "opts": {
+      "type": "object",
       "additionalProperties": false,
       "if": {
         "properties": {
