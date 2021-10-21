@@ -55,7 +55,8 @@
     },
     "type_tags": {
       "items": {
-        "type": "string"
+        "type": "string",
+        "enum": ["access-control", "artifact-info", "installer", "deploy", "utility", "dependency", "code-sign", "build", "test", "notification"]
       },
       "type": "array"
     },
