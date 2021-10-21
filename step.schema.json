@@ -26,21 +26,6 @@
     "support_url": {
       "type": "string"
     },
-    "published_at": {
-      "type": "string",
-      "format": "date-time"
-    },
-    "source": {
-      "$ref": "#/definitions/StepSourceModel"
-    },
-    "asset_urls": {
-      "patternProperties": {
-        ".*": {
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
     "host_os_tags": {
       "items": {
         "type": "string"
@@ -114,6 +99,7 @@
       "items": {
         "$ref": "env_var.schema.json"
       }
+    }
   },
   "definitions": {
     "AptGetDepModel": {
@@ -200,18 +186,6 @@
       ],
       "properties": {
         "package_name": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": false,
-      "type": "object"
-    },
-    "StepSourceModel": {
-      "properties": {
-        "git": {
-          "type": "string"
-        },
-        "commit": {
           "type": "string"
         }
       },
