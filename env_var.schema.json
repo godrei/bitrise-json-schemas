@@ -1,10 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://example.com/env_var.schema.json",
   "title": "Environment Variable",
   "description": "Bitrise Environment Variable",
   "type": "object",
-  "additionalProperties": false,
   "maxProperties": 2,
   "minProperties": 1,
   "dependentSchemas": {
@@ -12,11 +10,7 @@
       "minProperties": 2
     }
   },
-  "patternProperties": {
-    "^(?!opts$).+": {
-      "type": ["string", "null"]
-    }
-  },
+  "additionalProperties": { "type":  ["string", "null"] },
   "properties": {
     "opts": {
       "type": "object",
